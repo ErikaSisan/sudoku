@@ -87,6 +87,8 @@ function exibeTabuleiro() {
   array.map((e) => {
     let block = document.createElement("input");
     block.value = e[Object.keys(e)];
+    block.setAttribute("data-item", Object.keys(e));
+    block.setAttribute("placeholder", Object.keys(e));
     block.classList.add("item");
     block.classList.add("l");
     block.classList.add("t");
@@ -95,8 +97,18 @@ function exibeTabuleiro() {
 }
 exibeTabuleiro();
 
-
-
+function getLines() {
+  let index = 0;
+  let lines = [];
+  array.map((e, i) => {
+    if (i == index) {
+    //   lines.push(e);
+    //   index = index + 8;
+      console.log(e);
+    }
+  });
+}
+getLines()
 // $(document).ready(
 // function(){
 //     for(let i=0; i<=8; i++){
