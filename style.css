@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
+*{margin:0; padding:0;}
+
+body{
+	background-color: rgb(255,255,255);
+}
+
+header, img{
+	width: 100%;
+	height: 300px; 
+}
+
+
+nav{
+	background-color: #f3ccac;
+	text-align: center;
+	padding: 12px;
+}
+
+a{
+	font: 1rem 'Open Sans', sans-serif;
+	text-decoration: none;
+}
+.a-menu{
+	margin-right: 50px;
+	font-weight: bold;
+}
+.a-menu:link, .a-menu:visited{
+	color:#986242;
+}
+.a-menu:hover, .a-menu:active{
+	color:#a97d62; 
+}
+article{
+	width: 100%;
+	background-color: #FFF;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+h1{
+	font: 2rem 'Andika New Basic', sans-serif;
+	color: #f3971e;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+p{
+	font: 1rem 'Open Sans', sans-serif;
+	color: #696969;
+	text-align: justify;
+	/* text-indent: 20px; paragrafo */
+	line-height: 25px;
+}
+
+#text-cinza{
+	color:#808080;
+}
+
+section{
+	padding: 20px; /*Todas as minhas sessões possuem um padding de 20px*/
+	
+}
+
+h2{
+	font: 1.5rem 'Andika New Basic', sans-serif;
+	color: #f3971e;
+	margin-bottom: 15px;
+}
+
+#Pag_regras{
+	background-color: #fff4e9;
+	padding:20px;
+}
+
+#Pag_regras p{
+	background-color: #FFF;
+}
+
+ul{ 
+	/* list-style-position: inside;*/
+	list-style-type: square; /* marcador da lista*/
+	padding: 20px 40px;
+}
+
+li{
+	font:1rem 'Open Sans', sans-serif;
+	color: #7a4525;
+	margin-bottom: 8px;
+}
+
+#Pag_jogo p{
+	background-color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+	
+}
+
+
+/*#errors {
+    color: red;
+	text-align: center;
+}
+
+#board {
+    width: 450px;
+    height: 450px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}*/
+
+/*.tile {
+    width: 48px; 
+    height: 48px;
+    border: 1px solid lightgray;*/
+
+    /* Text */
+    /*font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#digits {
+    width: 450px;
+    height: 50px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 44px; 
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;*/
+
+    /* Text */
+   /* font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-selected {
+    background-color: gray;
+}
+
+.tile-start {
+    background-color: whitesmoke;
+}
+
+.horizontal-line {
+    border-bottom: 1px solid black;
+}
+
+.vertical-line {
+    border-right: 1px solid black;
+}*/
+  
+
+
+
+
+
+
+
