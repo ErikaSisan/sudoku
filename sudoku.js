@@ -1,56 +1,142 @@
 let array = [
-    ['1','','','','','','','',''],
-    ['','2','','','','','','',''],
-    ['','','3','','','','','',''],
-    ['','','','','','','','',''],
-    ['','','','','','','','',''],
-    ['','','','','','','','','8'],
-    ['','','','','','','','7',''],
-    ['','','','','','','6','',''],
-    ['','','','','','5','','','']
+  { a1: "" },
+  { b1: "" },
+  { c1: "" },
+  { d1: "" },
+  { e1: "" },
+  { f1: "" },
+  { g1: "" },
+  { h1: "" },
+  { i1: "" },
+  { a2: "" },
+  { b2: "" },
+  { c2: "" },
+  { d2: "" },
+  { e2: "" },
+  { f2: "" },
+  { g2: "" },
+  { h2: "" },
+  { i2: "" },
+  { a3: "" },
+  { b3: "" },
+  { c3: "" },
+  { d3: "" },
+  { e3: "" },
+  { f3: "" },
+  { g3: "" },
+  { h3: "" },
+  { i3: "" },
+  { a4: "" },
+  { b4: "" },
+  { c4: "" },
+  { d4: "" },
+  { e4: "" },
+  { f4: "" },
+  { g4: "" },
+  { h4: "" },
+  { i4: "" },
+  { a5: "" },
+  { b5: "" },
+  { c5: "" },
+  { d5: "" },
+  { e5: "" },
+  { f5: "" },
+  { g5: "" },
+  { h5: "" },
+  { i5: "" },
+  { a6: "" },
+  { b6: "" },
+  { c6: "" },
+  { d6: "" },
+  { e6: "" },
+  { f6: "" },
+  { g6: "" },
+  { h6: "" },
+  { i6: "" },
+  { a7: "" },
+  { b7: "" },
+  { c7: "" },
+  { d7: 5 },
+  { e7: "" },
+  { f7: "" },
+  { g7: "" },
+  { h7: "" },
+  { i7: "" },
+  { a8: "" },
+  { b8: "" },
+  { c8: "" },
+  { d8: "" },
+  { e8: "" },
+  { f8: "" },
+  { g8: "" },
+  { h8: "" },
+  { i8: "" },
+  { a9: "" },
+  { b9: "" },
+  { c9: "" },
+  { d9: "" },
+  { e9: "" },
+  { f9: "" },
+  { g9: "" },
+  { h9: "" },
+  { i9: "" },
 ];
 
-$(document).ready(
-function(){
-    for(let i=0; i<=8; i++){
+function exibeTabuleiro() {
+  let tab = document.getElementById("area");
+  array.map((e) => {
+    let block = document.createElement("input");
+    block.value = e[Object.keys(e)];
+    block.classList.add("item");
+    block.classList.add("l");
+    block.classList.add("t");
+    tab.appendChild(block);
+  });
+}
+exibeTabuleiro();
 
-    let tr = $('<tr>');
-    for (let j=0; j<=8; j++){
-        let input = $(`<input type="text" id="c${i} ${j}" value="${array[i] [j]}">`);
-        let td = $(`<td>`)
-        td.append(input);
-        tr.append(td);  
-        
-        input.on('input',function(e) {
-                let el = $(this);
-                let lin = el.attr('id') [1];
-                let col = el.attr('id') [2];
-                let valor = el.val();
-                if (jogadaValida(array,lin,col,valor)){
-                    array[lin] [col] = valor;
-                }
 
-               else{
-                //mensagem de erro
-               }
 
-               if(jogoCompleto(array)){
-                //fim de jogo, parabéns!
-               }
+// $(document).ready(
+// function(){
+//     for(let i=0; i<=8; i++){
 
-                console.log(array);
-            }
-        )
-    }
+//     let tr = $('<tr>');
+//     for (let j=0; j<=8; j++){
+//         let input = $(`<input type="text" id="c${i} ${j}" value="${array[i] [j]}">`);
+//         let td = $(`<td>`)
+//         td.append(input);
+//         tr.append(td);
 
-    $('#grade').append(tr);
-    }
+//         input.on('input',function(e) {
+//                 let el = $(this);
+//                 let lin = el.attr('id') [1];
+//                 let col = el.attr('id') [2];
+//                 let valor = el.val();
+//                 if (jogadaValida(array,lin,col,valor)){
+//                     array[lin] [col] = valor;
+//                 }
 
-    }
+//                else{
+//                 //mensagem de erro
+//                }
 
-);
-function jogadaValida(array,lin,col,valor)
+//                if(jogoCompleto(array)){
+//                 //fim de jogo, parabéns!
+//                }
 
+//                 console.log(array);
+//             }
+//         )
+//     }
+
+//     $('#grade').append(tr);
+//     }
+
+//     }
+
+// );
+// function jogadaValida(array,lin,col,valor)
 
 /*let numSelected = null;
 let tileSelected = null;

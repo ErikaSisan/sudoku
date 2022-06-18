@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<title>SUDOKU</title>
-		<meta charset="utf-8" />
-		<meta name="author" content="Érika Silva" />
-		<meta name="keywords" content="Projeto, sudoku" />
-		<meta name="description" content="Projeto sudoku" />
+  <head>
+    <title>SUDOKU</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Érika Silva" />
+    <meta name="keywords" content="Projeto, sudoku" />
+    <meta name="description" content="Projeto sudoku" />
 
-		<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="jogo/ban.png" alt="banner contendo a logo do jogo sudoku" />
+    </header>
 
-	</head>
-	<body>
-		<header>
-			<img src="jogo/ban.png" alt="banner contendo a logo do jogo sudoku" />
-		</header>
+    <nav>
+      <a class="a-menu" href="#">HOME</a>
+      <a class="a-menu" href="#Pag_regras">REGRAS</a>
+      <a class="a-menu" href="#Pag_jogo">JOGO</a>
+    </nav>
+    <article>
+      <h1>Projeto Sudoku</h1>
 
-			<nav>
-				<a class="a-menu" href="#">HOME</a>
-				<a class="a-menu" href="#Pag_regras">REGRAS</a>
-				<a class="a-menu" href="#Pag_jogo">JOGO</a>
-			</nav>
-			<article>
-	   <h1>Projeto Sudoku</h1>
-	  
-			  <p><span id="text-cinza">Meu nome é</span> <strong>Érika Silva</strong>, sou aluna do curso de Tecnologia em Sistemas para Internet, estou no 4º semestre e 
-			no turno vespertino. Esse projeto é sobre a criação de um jogo chamado Sudoku com a linguagem de programação JavaScript.</p>
-		  </article>
+      <p>
+        <span id="text-cinza">Meu nome é</span> <strong>Érika Silva</strong>,
+        sou aluna do curso de Tecnologia em Sistemas para Internet, estou no 4º
+        semestre e no turno vespertino. Esse projeto é sobre a criação de um
+        jogo chamado Sudoku com a linguagem de programação JavaScript.
+      </p>
+    </article>
 
-	   	<section id="Pag_regras">
-	   		<h2>Regras básicas para o jogo Sudoku</h2>
-				<p></p>
-					<ul>	
-					   <li>A grelha do Sudoku é composta por 9x9 espaços</li>
-					   <li>Só podes usar números de 1 a 9</li> 
-				       <li>Cada bloco 3×3 pode conter apenas números de 1 a 9</li>
-				       <li>Cada coluna vertical pode conter apenas números de 1 a 9</li>
-				       <li>Cada linha horizontal pode conter apenas números de 1 a 9</li>
-				       <li>Cada número no bloco 3×3, na coluna vertical ou na linha horizontal só pode ser usado uma vez</li>
-				       <li>O jogo terminará toda a grade do Sudoku quando estiver com muitos números</li>
-			   		</ul>
-		</section>
+    <section id="Pag_regras">
+      <h2>Regras básicas para o jogo Sudoku</h2>
+      <p></p>
+      <ul>
+        <li>A grelha do Sudoku é composta por 9x9 espaços</li>
+        <li>Só podes usar números de 1 a 9</li>
+        <li>Cada bloco 3×3 pode conter apenas números de 1 a 9</li>
+        <li>Cada coluna vertical pode conter apenas números de 1 a 9</li>
+        <li>Cada linha horizontal pode conter apenas números de 1 a 9</li>
+        <li>
+          Cada número no bloco 3×3, na coluna vertical ou na linha horizontal só
+          pode ser usado uma vez
+        </li>
+        <li>
+          O jogo terminará toda a grade do Sudoku quando estiver com muitos
+          números
+        </li>
+      </ul>
+    </section>
 
+    <section id="Pag_jogo">
+      <h2>Jogo</h2>
 
-	   <section id="Pag_jogo">
-	  
-		   		<h2>Jogo</h2>
-		   
-			<p>Prontos para jogar? </p>
+      <p>Prontos para jogar?</p>
 
-			<h1>Sudoku</h1>
-			
-			<!--<h2 id="errors">0</h2>
+      <h1>Sudoku</h1>
+
+      <!--<h2 id="errors">0</h2>
 	
 			<div id="board"></div>
 			<br>
 			<div id="digits">
 			</div>-->
 
-			<table id="grade">
-				<!--<tr>
-				<td><input type="text" id="c11" ></td>
-				</tr>-->
-			</table>
 
-		</section>
-		<script  src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="sudoku.js"></script>
-	</body>
+        <div id="area" class="area">
+
+        </div>
+      </div>
+    </section>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="sudoku.js"></script>
+  </body>
 </html>
