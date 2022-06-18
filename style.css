@@ -1,48 +1,4 @@
 
-
-.area {
-    width: 300px;
-    display: grid;
-    grid-template-columns: repeat(9, 0fr);
-    margin-top: 30px;
-}
-.area .item {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-	text-align: center;
-}
-.item:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.item.t {
-    border-top: 1px solid #000;
-}
-.item.l {
-    border-left: 1px solid #000;
-}
-.item.r {
-    border-right: 1px solid #000;
-}
-.item.b {
-    border-bottom: 1px solid #000;
-}
-
-.reset {
-    border: 1px solid #000;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #FFF;
-    padding: 10px;
-    margin-top: 20px;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
 *{margin:0; padding:0;}
 
@@ -141,7 +97,10 @@ li{
 	
 }
 
-
+input {
+	width: 15px;
+	text-align: center;
+}
 /*#errors {
     color: red;
 	text-align: center;

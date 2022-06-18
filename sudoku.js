@@ -1,114 +1,66 @@
-let array = [
-  { a1: "" },
-  { b1: "" },
-  { c1: "" },
-  { d1: "" },
-  { e1: "" },
-  { f1: "" },
-  { g1: "" },
-  { h1: "" },
-  { i1: "" },
-  { a2: "" },
-  { b2: "" },
-  { c2: "" },
-  { d2: "" },
-  { e2: "" },
-  { f2: "" },
-  { g2: "" },
-  { h2: "" },
-  { i2: "" },
-  { a3: "" },
-  { b3: "" },
-  { c3: "" },
-  { d3: "" },
-  { e3: "" },
-  { f3: "" },
-  { g3: "" },
-  { h3: "" },
-  { i3: "" },
-  { a4: "" },
-  { b4: "" },
-  { c4: "" },
-  { d4: "" },
-  { e4: "" },
-  { f4: "" },
-  { g4: "" },
-  { h4: "" },
-  { i4: "" },
-  { a5: "" },
-  { b5: "" },
-  { c5: "" },
-  { d5: "" },
-  { e5: "" },
-  { f5: "" },
-  { g5: "" },
-  { h5: "" },
-  { i5: "" },
-  { a6: "" },
-  { b6: "" },
-  { c6: "" },
-  { d6: "" },
-  { e6: "" },
-  { f6: "" },
-  { g6: "" },
-  { h6: "" },
-  { i6: "" },
-  { a7: "" },
-  { b7: "" },
-  { c7: "" },
-  { d7: 5 },
-  { e7: "" },
-  { f7: "" },
-  { g7: "" },
-  { h7: "" },
-  { i7: "" },
-  { a8: "" },
-  { b8: "" },
-  { c8: "" },
-  { d8: "" },
-  { e8: "" },
-  { f8: "" },
-  { g8: "" },
-  { h8: "" },
-  { i8: "" },
-  { a9: "" },
-  { b9: "" },
-  { c9: "" },
-  { d9: "" },
-  { e9: "" },
-  { f9: "" },
-  { g9: "" },
-  { h9: "" },
-  { i9: "" },
+let sudoku = [
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", 5, "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
 ];
 
 function exibeTabuleiro() {
-  let tab = document.getElementById("area");
-  array.map((e) => {
-    let block = document.createElement("input");
-    block.value = e[Object.keys(e)];
-    block.setAttribute("data-item", Object.keys(e));
-    block.setAttribute("placeholder", Object.keys(e));
-    block.classList.add("item");
-    block.classList.add("l");
-    block.classList.add("t");
-    tab.appendChild(block);
-  });
+  let tab = document.getElementById("grade");
+
+  for (let i = 0; i <= 8; i++) {
+    let tr = document.createElement("tr");
+
+    for (let j = 0; j <= 8; j++) {
+      let td = document.createElement("td");
+      let input = document.createElement("input");
+
+      input.setAttribute("id", `c${i}${j}`);
+      input.setAttribute("type", "text");
+      input.value = sudoku[i][j];
+
+      input.addEventListener("input", (e) => {
+        let el = e.target.getAttribute("id");
+        let lin = el[1];
+        let col = el[2];
+        let valor = e.target.value;
+
+        if (validaJogada(sudoku, lin, col, valor)) {
+          sudoku[lin][col] = valor;
+        }
+
+        finalizaJogo();
+      });
+
+      td.append(input);
+      tr.append(td);
+    }
+
+    tab.append(tr);
+  }
 }
 exibeTabuleiro();
 
-function getLines() {
-  let index = 0;
-  let lines = [];
-  array.map((e, i) => {
-    if (i == index) {
-    //   lines.push(e);
-    //   index = index + 8;
-      console.log(e);
-    }
-  });
+function validaJogada(sudoku, lin, col, valor) {
+  /*
+    Aqui vc vai inserir as verificações para saber se o número não é repetido naquela linha,
+    coluna, ou quadrante.
+    */
+  return true;
 }
-getLines()
+
+function finalizaJogo() {
+  /*
+    Essa vc vai verificar se todos os itens do array sudoku estão preenchidos
+    */
+  return true;
+}
+
 // $(document).ready(
 // function(){
 //     for(let i=0; i<=8; i++){
