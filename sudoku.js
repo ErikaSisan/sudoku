@@ -10,6 +10,18 @@ let sudoku = [
   ["", "", "", "", "", "", "", "", ""],
 ];
 
+let solucao = [
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", 6, "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+  ];
+
 function exibeTabuleiro() {
   let tab = document.getElementById("grade");
 
@@ -47,12 +59,19 @@ function exibeTabuleiro() {
 exibeTabuleiro();
 
 function validaJogada(sudoku, lin, col, valor) {
+   
+    }
+   
+  
+        
+
   /*
     Aqui vc vai inserir as verificações para saber se o número não é repetido naquela linha,
     coluna, ou quadrante.
     */
   return true;
-}
+
+
 
 function finalizaJogo() {
   /*
