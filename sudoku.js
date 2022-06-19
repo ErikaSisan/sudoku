@@ -63,29 +63,30 @@ function exibeTabuleiro() {
 exibeTabuleiro();
 
 function validaJogada(solucao, lin, col, valor) {
-    if (validaJogada(solucao, lin, col, valor)) {
-        solucao[lin][col] = valor;
+    if (solucao[lin][col] == valor) {
+        return true;
       }
-      return true;
-     
-
-
-
-    }
-   
-  
-        
-
+        return false;
+      }
+      
   /*
-    Aqui vc vai inserir as verificações para saber se o número não é repetido naquela linha,
+    insere as verificações para saber se o número não é repetido naquela linha,
     coluna, ou quadrante.
     */
 
 function finalizaJogo() {
+    let points = 0
+    
+    for (let i = 0; i <= 8; i++) {
+        for (let j = 0; j <= 8; j++) {
+        }
+    }
+
+
   /*
-    Essa vc vai verificar se todos os itens do array sudoku estão preenchidos
+    vai verificar se todos os itens do array sudoku estão preenchidos
     */
-  return true;
+  
 }
 
 // $(document).ready(

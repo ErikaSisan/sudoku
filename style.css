@@ -42,7 +42,6 @@ article{
 h1{
 	font: 2rem 'Andika New Basic', sans-serif;
 	color: #f3971e;
-	text-align: center;
 	margin-bottom: 20px;
 }
 
@@ -93,7 +92,7 @@ li{
 #Pag_jogo p{
 	background-color: #FFF;
 	font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    
 	
 }
 
