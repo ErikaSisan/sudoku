@@ -24,6 +24,22 @@ let solucao = [
 
 let messagem = document.getElementById("mensagem");
 let tab = document.getElementById("grade");
+let menu = document.querySelectorAll(".a-menu");
+let sections = document.querySelectorAll("section");
+
+menu.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    console.log("clicado: ", e.target.getAttribute("data-item"));
+    sections.forEach((a) => {
+      console.log("existente: ", a.getAttribute("id"));
+      if (a.getAttribute("id") == e.target.getAttribute("data-item")) {
+        a.style.display = "block";
+      } else {
+        a.style.display = "none";
+      }
+    });
+  });
+});
 
 function exibeTabuleiro() {
   for (let i = 0; i <= 8; i++) {
@@ -80,20 +96,6 @@ function validaJogada(lin, col, valor) {
   }
   return false;
 }
-
-let menu = document.querySelectorAll(".a-menu");
-let sections = document.querySelectorAll("section");
-menu.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    sections.forEach((a) => {
-      if (a.getAttribute("id") == e.target.getAttribute("data-item")) {
-        a.style.display = "block";
-      } else {
-        a.style.display = "none";
-      }
-    });
-  });
-});
 
 /*
     insere as verificações para saber se o número não é repetido naquela linha,
