@@ -10,25 +10,22 @@ let sudoku = [
   [8, 1, "", "", 4, 5, "", "", ""],
 ];
 
-
-
 let solucao = [
-    [3, 8, 7, 4, 9, 1, 6, 2, 5],
-    [2, 4, 1, 5, 6, 8, 3, 7, 9],
-    [5, 6, 9, 3, 2, 7, 4, 1, 8],
-    [7, 5, 8, 6, 1, 9, 2, 3, 4],
-    [1, 2, 3, 7, 8, 4, 5, 9, 6],
-    [4, 9, 6, 2, 5, 3, 1, 8, 7],
-    [9, 3, 4, 1, 7, 6, 8, 5, 2],
-    [6, 7, 5, 8, 3, 2, 9, 4, 1],
-    [8, 1, 2, 9, 4, 5, 7, 6, 3],
-  ];
+  [3, 8, 7, 4, 9, 1, 6, 2, 5],
+  [2, 4, 1, 5, 6, 8, 3, 7, 9],
+  [5, 6, 9, 3, 2, 7, 4, 1, 8],
+  [7, 5, 8, 6, 1, 9, 2, 3, 4],
+  [1, 2, 3, 7, 8, 4, 5, 9, 6],
+  [4, 9, 6, 2, 5, 3, 1, 8, 7],
+  [9, 3, 4, 1, 7, 6, 8, 5, 2],
+  [6, 7, 5, 8, 3, 2, 9, 4, 1],
+  [8, 1, 2, 9, 4, 5, 7, 6, 3],
+];
 
- 
+let messagem = document.getElementById("mensagem");
+let tab = document.getElementById("grade");
 
 function exibeTabuleiro() {
-  let tab = document.getElementById("grade");
-
   for (let i = 0; i <= 8; i++) {
     let tr = document.createElement("tr");
 
@@ -46,8 +43,23 @@ function exibeTabuleiro() {
         let col = el[2];
         let valor = e.target.value;
 
-        if (validaJogada(sudoku, lin, col, valor)) {
+        if (!valor) {
+          messagem.innerHTML = "";
+          input.classList.remove("certo");
+          input.classList.remove("errado");
+        }
+
+        if (valor > 0 && validaJogada(lin, col, valor)) {
+          input.classList.remove("errado");
+          if (valor) {
+            messagem.innerHTML = "";
+            input.classList.add("certo");
+          }
           sudoku[lin][col] = valor;
+        } else if (valor > 0) {
+          messagem.innerHTML = "Valor errado, tente outro número";
+          input.classList.remove("certo");
+          input.classList.add("errado");
         }
 
         finalizaJogo();
@@ -62,41 +74,37 @@ function exibeTabuleiro() {
 }
 exibeTabuleiro();
 
-function validaJogada(solucao, lin, col, valor) {
-    if (solucao[lin][col] == valor) {
-        return true;
-      }
-        return false;
-      }
-     
-  /*
+function validaJogada(lin, col, valor) {
+  if (solucao[lin][col] == valor) {
+    return true;
+  }
+  return false;
+}
+
+/*
     insere as verificações para saber se o número não é repetido naquela linha,
     coluna, ou quadrante.
     */
 
 function finalizaJogo() {
-    let points = 0
+  let points = 0;
 
-    for (let i = 0; i <= 8; i++) {
-        for (let j = 0; j <= 8; j++) {
-            if(sudoku[i][j]){
-                points++;
-                }
-        }
+  for (let i = 0; i <= 8; i++) {
+    for (let j = 0; j <= 8; j++) {
+      if (sudoku[i][j]) {
+        points++;
+      }
     }
+  }
 
-    if(points == 81) {return true}
-    else{
-        alert("Campo vazio!")
-    }
-
-    console.log(points) 
+  if (points == 81) {
+    messagem.innerHTML = "Parabéns, você finalizou tudo corretamente";
+    return true;
+  }
   /*
     vai verificar se todos os itens do array sudoku estão preenchidos
     */
-  
 }
-
 
 // $(document).ready(
 // function(){

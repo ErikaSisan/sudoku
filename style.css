@@ -100,6 +100,14 @@ input {
 	width: 15px;
 	text-align: center;
 }
+
+.certo{
+	background: chartreuse;
+}
+
+.errado{
+	background: crimson;
+}
 /*#errors {
     color: red;
 	text-align: center;
