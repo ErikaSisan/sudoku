@@ -15,22 +15,24 @@
     </header>
 
     <nav>
-      <a class="a-menu" href="#">HOME</a>
-      <a class="a-menu" href="#Pag_regras">REGRAS</a>
-      <a class="a-menu" href="#Pag_jogo">JOGO</a>
+      <a class="a-menu" data-item="Home" href="#">HOME</a>
+      <a class="a-menu" data-item="Pag_regras" href="#">REGRAS</a>
+      <a class="a-menu" data-item="Pag_jogo" href="#">JOGO</a>
     </nav>
-    <article>
-      <h1>Projeto Sudoku</h1>
+    <section id="Home">
+      <article>
+        <h1>Projeto Sudoku</h1>
 
-      <p>
-        <span id="text-cinza">Meu nome é</span> <strong>Érika Silva</strong>,
-        sou aluna do curso de Tecnologia em Sistemas para Internet, estou no 4º
-        semestre e no turno vespertino. Esse projeto é sobre a criação de um
-        jogo chamado Sudoku com a linguagem de programação JavaScript.
-      </p>
-    </article>
+        <p>
+          <span id="text-cinza">Meu nome é</span> <strong>Érika Silva</strong>,
+          sou aluna do curso de Tecnologia em Sistemas para Internet, estou no
+          4º semestre e no turno vespertino. Esse projeto é sobre a criação de
+          um jogo chamado Sudoku com a linguagem de programação JavaScript.
+        </p>
+      </article>
+    </section>
 
-    <section id="Pag_regras">
+    <section id="Pag_regras" style="display: none">
       <h2>Regras básicas para o jogo Sudoku</h2>
       <p></p>
       <ul>
@@ -50,7 +52,7 @@
       </ul>
     </section>
 
-    <section id="Pag_jogo">
+    <section id="Pag_jogo" style="display: none">
       <h2>Jogo</h2>
 
       <p>Prontos para jogar?</p>

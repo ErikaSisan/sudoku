@@ -81,6 +81,20 @@ function validaJogada(lin, col, valor) {
   return false;
 }
 
+let menu = document.querySelectorAll(".a-menu");
+let sections = document.querySelectorAll("section");
+menu.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    sections.forEach((a) => {
+      if (a.getAttribute("id") == e.target.getAttribute("data-item")) {
+        a.style.display = "block";
+      } else {
+        a.style.display = "none";
+      }
+    });
+  });
+});
+
 /*
     insere as verificações para saber se o número não é repetido naquela linha,
     coluna, ou quadrante.
