@@ -28,23 +28,25 @@ let menu = document.querySelectorAll(".a-menu");
 let sections = document.querySelectorAll("section");
 
 menu.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    console.log("clicado: ", e.target.getAttribute("data-item"));
-    sections.forEach((a) => {
-      console.log("existente: ", a.getAttribute("id"));
-      if (a.getAttribute("id") == e.target.getAttribute("data-item")) {
-        a.style.display = "block";
+  element.addEventListener("click", (clicado) => {
+    sections.forEach((section) => {
+      if (
+        section.getAttribute("id") == clicado.target.getAttribute("data-item")
+      ) {
+        section.style.display = "block";
       } else {
-        a.style.display = "none";
+        section.style.display = "none";
       }
     });
   });
 });
 
 function exibeTabuleiro() {
+  //Linha
   for (let i = 0; i <= 8; i++) {
     let tr = document.createElement("tr");
 
+    //Coluna
     for (let j = 0; j <= 8; j++) {
       let td = document.createElement("td");
       let input = document.createElement("input");
@@ -54,7 +56,7 @@ function exibeTabuleiro() {
       input.value = sudoku[i][j];
 
       input.addEventListener("input", (e) => {
-        let el = e.target.getAttribute("id");
+        let el = e.target.getAttribute("id"); //c16
         let lin = el[1];
         let col = el[2];
         let valor = e.target.value;
@@ -65,16 +67,16 @@ function exibeTabuleiro() {
           input.classList.remove("errado");
         }
 
-        if (valor > 0 && validaJogada(lin, col, valor)) {
+        let jogada = validaJogada(lin, col, valor);
+
+        if (valor > 0 && jogada) {
           input.classList.remove("errado");
-          if (valor) {
-            messagem.innerHTML = "";
-            input.classList.add("certo");
-          }
+          messagem.innerHTML = "Você acertou";
+          input.classList.add("certo");
           sudoku[lin][col] = valor;
         } else if (valor > 0) {
-          messagem.innerHTML = "Valor errado, tente outro número";
           input.classList.remove("certo");
+          messagem.innerHTML = "Valor errado, tente outro número";
           input.classList.add("errado");
         }
 
@@ -88,6 +90,7 @@ function exibeTabuleiro() {
     tab.append(tr);
   }
 }
+
 exibeTabuleiro();
 
 function validaJogada(lin, col, valor) {
@@ -121,4 +124,3 @@ function finalizaJogo() {
     vai verificar se todos os itens do array sudoku estão preenchidos
     */
 }
-
