@@ -68,7 +68,7 @@ function validaJogada(solucao, lin, col, valor) {
       }
         return false;
       }
-      
+     
   /*
     insere as verificações para saber se o número não é repetido naquela linha,
     coluna, ou quadrante.
@@ -76,18 +76,27 @@ function validaJogada(solucao, lin, col, valor) {
 
 function finalizaJogo() {
     let points = 0
-    
+
     for (let i = 0; i <= 8; i++) {
         for (let j = 0; j <= 8; j++) {
+            if(sudoku[i][j]){
+                points++;
+                }
         }
     }
 
+    if(points == 81) {return true}
+    else{
+        alert("Campo vazio!")
+    }
 
+    console.log(points) 
   /*
     vai verificar se todos os itens do array sudoku estão preenchidos
     */
   
 }
+
 
 // $(document).ready(
 // function(){
